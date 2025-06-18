@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { Raleway } from 'next/font/google'
 import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
@@ -27,6 +28,12 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
+const raleway = Raleway({
+  variable: '--font-raleway',
+  subsets: ['latin'],
+})
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
+        className={`${geist.variable} ${geistMono.variable} ${raleway.variable} bg-[var(--background)] text-[var(--text)] tracking-tight antialiased dark:bg-[var(--background)] dark:text-[var(--text)]`}
       >
         <ThemeProvider
           enableSystem={true}
@@ -43,7 +50,7 @@ export default function RootLayout({
           storageKey="theme"
           defaultTheme="system"
         >
-          <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
+          <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-raleway)]">
             <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
               <Header />
               {children}

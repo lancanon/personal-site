@@ -18,6 +18,14 @@ export function Header() {
         >
           Software Engineer
         </TextEffect>
+        <Link
+          href="https://www.credly.com/badges/3b3cfd88-bbb4-40ca-8297-fb14c022e817/linked_in_profile" 
+          className="[color:#e28A4c]  hover:[color:#2563eb] transition-colors]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          AWS Cloud Practitioner
+        </Link>
       </div>
     </header>
   )

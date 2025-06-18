@@ -2,6 +2,17 @@
 @plugin '@tailwindcss/typography';
 @custom-variant dark (&:is(.dark *));
 
+/* Custom theme variables */
+:root {
+  --background: #ffffff;
+  --text: #222222;
+}
+
+.dark {
+  --background: #15202b;
+  --text: #e0e6f7;
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
