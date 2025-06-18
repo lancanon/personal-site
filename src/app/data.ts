@@ -6,7 +6,7 @@ type Project = {
   id: string
 }
 
-type WorkExperience = {
+type Experience = {
   company: string
   title: string
   start: string
@@ -15,12 +15,6 @@ type WorkExperience = {
   id: string
 }
 
-type BlogPost = {
-  title: string
-  description: string
-  link: string
-  uid: string
-}
 
 type SocialLink = {
   label: string
@@ -31,7 +25,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'Rollcall',
     description:
-      'Advanced components and templates to craft beautiful websites.',
+      ' task-management mobile application that inspires productivity through focused features like streaks, motivation, and simple task tracking.',
     link: 'https://pro.motion-primitives.com/',
     video:
       'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
@@ -47,7 +41,7 @@ export const PROJECTS: Project[] = [
   },
 ]
 
-export const WORK_EXPERIENCE: WorkExperience[] = [
+export const EXPERIENCE: Experience[] = [
   {
     company: 'B.S. Computer Science',
     title: 'University of North Carolina - Charlotte',
@@ -64,40 +58,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     link: 'https://www.gtcc.edu/',
     id: 'work2',
   },
-  {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
-    id: 'work3',
-  },
 ]
 
-export const BLOG_POSTS: BlogPost[] = [
-  {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-1',
-  },
-  {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
-  },
-]
-
-export const SOCIAL_LINKS: SocialLink[] = [
+export const SOCIAL_LINKS = [
   {
     label: 'Github',
     link: 'https://github.com/lancanon',
@@ -113,6 +76,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Instagram',
     link: 'https://www.instagram.com/lannymon_',
+  },
+   {
+    label: 'Bluesky',
+    link: 'http://bsky.app/profile/lannymon.bsky.social',
   },
 ]
 
