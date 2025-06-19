@@ -1,23 +1,18 @@
 'use client'
-import { TextEffect } from '../../components/ui/text-effect'
 import Link from 'next/link'
+import Image from 'next/image'
 import { MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { motion } from 'framer-motion'
 
-// Theme switcher button
 function ThemeSwitch() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
+  useEffect(() => { setMounted(true) }, [])
   if (!mounted) return null
-
   const isDark = theme === 'dark'
-
   return (
     <button
       className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 dark:text-zinc-400"
@@ -30,41 +25,60 @@ function ThemeSwitch() {
   )
 }
 
+const navLinks = [
+  { href: '/', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+]
+
 export function Header() {
+  const pathname = usePathname()
   return (
     <header className="mb-8 flex items-center justify-between">
-      <div className="flex items-center gap-8">
-        <Link href="/" className="font-medium text-black dark:text-white">
-          Audy Vee
+      {/* Left: Logo */}
+      <div className="flex items-center">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/assets/images/android-chrome-512x512.png"
+            alt="Audy Vee Logo"
+            width={40}
+            height={40}
+            className="rounded-full"
+            priority
+          />
         </Link>
-        <nav className="flex items-center gap-4">
-          <Link href="/about" className="text-zinc-600 dark:text-zinc-400 hover:underline">
-            About
-          </Link>
-          <Link href="/contact" className="text-zinc-600 dark:text-zinc-400 hover:underline">
-            Contact
-          </Link>
-          <ThemeSwitch />
-        </nav>
       </div>
+      {/* Center: Nav with sliding highlight */}
+      <nav className="relative flex items-center gap-12">
+        {navLinks.map(link => {
+          const isActive = pathname === link.href
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="relative px-4 py-2 rounded-xl text-lg font-medium"
+              style={{ zIndex: 1 }}
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="nav-highlight"
+                  className="absolute inset-0 rounded-xl bg-zinc-100 dark:bg-[#1e2936]"
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  style={{ zIndex: -1 }}
+                />
+              )}
+              <span className={isActive
+                ? "text-zinc-900 dark:text-white font-semibold"
+                : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+              }>
+                {link.label}
+              </span>
+            </Link>
+          )
+        })}
+      </nav>
+      {/* Right: Theme Switch */}
       <div>
-        <TextEffect
-          as="p"
-          preset="fade"
-          per="char"
-          className="text-zinc-600 dark:text-zinc-500"
-          delay={0.5}
-        >
-          Software Engineer
-        </TextEffect>
-        <Link
-          href="https://www.credly.com/badges/3b3cfd88-bbb4-40ca-8297-fb14c022e817/linked_in_profile"
-          className="[color:#e28A4c] hover:[color:#2563eb] transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          AWS Cloud Practitioner
-        </Link>
+        <ThemeSwitch />
       </div>
     </header>
   )
