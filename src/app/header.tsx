@@ -20,7 +20,7 @@ function ThemeSwitch() {
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
-      {isDark ? <SunIcon className="h-4 w-4" /> : <MoonIcon className="h-4 w-4" />}
+      {isDark ? <SunIcon className="h-6 w-6" /> : <MoonIcon className="h-6 w-6" />}
     </button>
   )
 }
