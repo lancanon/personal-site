@@ -51,7 +51,7 @@ export default function RootLayout({
           defaultTheme="system"
         >
           <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-raleway)]">
-            <div className="relative mx-auto w-full max-w-[800px] flex-1 px-4 pt-8">
+            <div className="relative mx-auto w-full max-w-[750px] flex-1 px-4 pt-8">
               <Header />
               {children}
               <Footer />
