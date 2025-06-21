@@ -110,10 +110,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'Instagram',
     link: 'https://www.instagram.com/lannymon_',
   },
-   {
-    label: 'Bluesky',
-    link: 'http://bsky.app/profile/lannymon.bsky.social',
-  },
 ]
 
 export const EMAIL = 'veeaudy1204@gmail.com'
