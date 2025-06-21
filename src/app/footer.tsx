@@ -27,7 +27,7 @@ const ICONS = {
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-zinc-200 px-0 py-4 dark:border-[#2e4052]">
+    <footer className="mt-24 ">
       <div className="flex flex-col items-center gap-2">
         <div className="flex gap-4 justify-center">
           {SOCIAL_LINKS.map((link) => (

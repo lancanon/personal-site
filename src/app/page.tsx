@@ -70,7 +70,7 @@ export default function Personal() {
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
                 {/* Dot */}
-                <span className={`w-4 h-4 rounded-full mt-1.5 mr-4 border-2 border-zinc-900  ${item.color}`} />
+                <span className={`w-3 h-3 rounded-full mt-1.5 mr-4 ${item.color}`} />
                 {/* Content */}
                 <div className="flex-1">
                   <div className="flex justify-between items-center">
