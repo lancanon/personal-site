@@ -11,7 +11,7 @@ const ICONS = {
 
 export function Footer() {
   return (
-    <footer className="mt-24 ">
+    <footer className="mt-24 py-8">
       <div className="flex flex-col items-center gap-3">
         <div className="flex gap-4 justify-center">
           {SOCIAL_LINKS.map((link) => (
@@ -21,7 +21,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="text-zinc-500 hover:text-[#2563eb] transition-colors"
+              className="text-zinc-600 dark:text-zinc-300 hover:text-blue-400 dark:hover:text-blue-400 transition-colors"
             >
               {ICONS[link.label as keyof typeof ICONS] ?? link.label}
             </a>

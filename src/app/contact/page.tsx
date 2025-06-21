@@ -4,10 +4,10 @@ import { EMAIL, SOCIAL_LINKS } from '../data'
 import { FaEnvelope, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 const ICONS = {
-  Email: <FaEnvelope size={20} />,
-  LinkedIn: <FaLinkedin size={20} />,
-  Instagram: <FaInstagram size={20} />,
-  Twitter: <FaTwitter size={20} />, 
+  Email: <FaEnvelope size={25} />,
+  LinkedIn: <FaLinkedin size={25} />,
+  Instagram: <FaInstagram size={25} />,
+  Twitter: <FaTwitter size={25} />, 
 } as const;
 
 const CONTACTS = [
@@ -45,7 +45,7 @@ export default function ContactPage() {
       transition={{ duration: 0.5 }}
     >
       <h3 className="text-lg font-bold mb-6">Let's Connect</h3>
-      <p className="mb-8 text-zinc-400">
+      <p className="mb-8 text-zinc-700 dark:text-zinc-400">
         Connect with me through any of these platforms.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -55,12 +55,12 @@ export default function ContactPage() {
             href={contact.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 rounded-xl border border-zinc-700/40 p-5 hover:border-[#2563eb] transition-colors"
+            className="flex items-center gap-4 rounded-xl border border-zinc-700/40 p-5 transition-transform duration-200 hover:scale-105"
           >
-            <span className="text-zinc-300">{contact.icon}</span>
+            <span className="text-zinc-600 dark:text-zinc-300">{contact.icon}</span>
             <div>
-              <div className="font-semibold text-white">{contact.label}</div>
-              <div className="text-zinc-400 text-sm">
+              <div className="font-semibold text-zinc-900 dark:text-white">{contact.label}</div>
+              <div className="text-zinc-700 dark:text-zinc-400 text-sm">
                 {contact.display || contact.value}
               </div>
             </div>

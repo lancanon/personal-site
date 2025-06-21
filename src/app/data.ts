@@ -27,7 +27,7 @@ export const TIMELINE: TimelineItem[] = [
   {
     company: 'Amazon Web Services',
     title: 'AWS Certified Cloud Practitioner',
-    date: '2025',
+    date: '2025 - Present',
     color: 'bg-yellow-600',
     link: 'https://www.credly.com/badges/3b3cfd88-bbb4-40ca-8297-fb14c022e817/linked_in_profile',
   },

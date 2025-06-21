@@ -81,9 +81,9 @@ export default function Personal() {
                 <div className="flex-1">
                   <div className="flex justify-between items-center">
                     <span className="font-semibold text-zinc-900 dark:text-white group-hover:text-blue-400 dark:group-hover:text-blue-400 transition-colors">{item.company}</span>
-                    <span className="text-base text-zinc-600 dark:text-zinc-400 text-sm">{item.date}</span>
+                    <span className="text-base text-zinc-700 dark:text-zinc-400 text-sm">{item.date}</span>
                   </div>
-                  <div className="italic text-base text-zinc-600 dark:text-zinc-400">{item.title}</div>
+                  <div className="italic text-base text-zinc-700 dark:text-zinc-400">{item.title}</div>
                 </div>
               </motion.a>
             ))}
