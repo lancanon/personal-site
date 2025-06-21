@@ -25,6 +25,13 @@ type SocialLink = {
 
 export const TIMELINE: TimelineItem[] = [
   {
+    company: 'Amazon Web Services',
+    title: 'AWS Certified Cloud Practitioner',
+    date: '2025',
+    color: 'bg-yellow-600',
+    link: 'https://www.credly.com/badges/3b3cfd88-bbb4-40ca-8297-fb14c022e817/linked_in_profile',
+  },
+  {
     company: 'University of North Carolina - Charlotte',
     title: 'B.S. Computer Science',
     date: '2022 - 2024',
@@ -35,7 +42,7 @@ export const TIMELINE: TimelineItem[] = [
     company: 'Guilford Technical Community College',
     title: 'A.S. Science',
     date: '2017 - 2021',
-    color: 'bg-yellow-600',
+    color: 'bg-red-600',
     link: 'https://www.gtcc.edu/',
   },
 ]

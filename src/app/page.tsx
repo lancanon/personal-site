@@ -89,6 +89,8 @@ export default function Personal() {
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
+        whileHover={{ scale: 1.02 }}
+
       >
         <h3 className="mb-5 text-lg font-bold ">Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -98,8 +100,7 @@ export default function Personal() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block rounded-2xl bg-zinc-50/40 p-4 ring-1 ring-zinc-200/50 ring-inset shadow transition-all duration-200 hover:bg-white hover:shadow-xl dark:bg-zinc-900/40 dark:ring-zinc-800/50 dark:hover:bg-[#1e2936] transform hover:scale-105"
-            >
+              className="group block rounded-2xl p-4 transition-all duration-200 transform hover:scale-105 bg-transparent">
               <div className="font-semibold text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {project.name}
               </div>
