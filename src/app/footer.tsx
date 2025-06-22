@@ -1,6 +1,6 @@
 'use client'
 import { SOCIAL_LINKS } from './data'
-import { FaGithub, FaTwitter, FaLinkedin, FaInstagram} from 'react-icons/fa'
+import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
 
 const ICONS = {
   Github: <FaGithub size={25} />,
@@ -11,7 +11,7 @@ const ICONS = {
 
 export function Footer() {
   return (
-    <footer className="mt-24 py-8">
+    <footer className="mt-12 py-2 w-full">
       <div className="flex flex-col items-center gap-3">
         <div className="flex gap-4 justify-center">
           {SOCIAL_LINKS.map((link) => (
@@ -27,7 +27,7 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <span>© 2025 Audy Vee. All Rights Reserved.</span>
+        <span className="text-sm">© 2025 Audy Vee. All Rights Reserved.</span>
       </div>
     </footer>
   )
