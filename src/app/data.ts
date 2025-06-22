@@ -8,6 +8,7 @@ type Project = {
   description: string
   tags: ProjectTag[]
   link: string
+  image: string
 }
 
 type TimelineItem = {
@@ -52,6 +53,7 @@ export const PROJECTS: Project[] = [
     name: 'Rollcall',
     description: 'task-management mobile application that inspires productivity through focused features like streaks, motivation, and simple task tracking.',
     link: 'https://github.com/nathanwince/Task-Manager',
+    image: '/assets/images/rollcall.png',
     tags: [
       { label: 'Figma', color: 'bg-blue-500' },
       { label: 'Flutter', color: 'bg-sky-400' },
@@ -64,6 +66,7 @@ export const PROJECTS: Project[] = [
     name: 'Joynest',
     description: 'e-commerce platform where users can buy, offer, and sell a wide variety of home decor and furniture',
     link:'https://github.com/lancanon/e-commere-project--2024-',
+    image: '/assets/images/joynest.png',
     tags: [
       { label: 'JavaScript', color: 'bg-yellow-500' },
       { label: 'Node.js', color: 'bg-red-600' },
@@ -75,6 +78,7 @@ export const PROJECTS: Project[] = [
     name: 'lannymon',
     description: 'personal social links for lannymon.net (discontinued)',
     link:'https://lancanon.github.io/',
+    image: '/assets/images/lannymon.png',
     tags: [
       { label: 'HTML', color: 'bg-green-500' },
       { label: 'CSS', color: 'bg-pink-600' },
@@ -86,7 +90,8 @@ export const PROJECTS: Project[] = [
   {
     name: 'Furusato',
     description: '2D platformer where the player guides a lost girl through a mysterious world to find her way back home.',
-    link:'https://github.com/lancanon/e-commere-project--2024-',
+    link:'https://github.com/lancanon/furusato-gamemaker',
+    image: '/assets/images/furusato.png',
     tags: [
       { label: 'GameMaker', color: 'bg-lime-500' },
     ],
