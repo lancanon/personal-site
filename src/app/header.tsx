@@ -93,7 +93,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="relative px-2 py-1 text-lg font-normal"
+              className="relative px-2 py-1 text-md font-normal"
               style={{ zIndex: 1 }}
             >
               <span className={isActive
