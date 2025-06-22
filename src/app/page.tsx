@@ -59,7 +59,7 @@ export default function Personal() {
           transition={TRANSITION_SECTION}
           whileHover={{ scale: 1.02 }}
         >
-          <h3 className="text-lg font-bold mb-6">Timeline</h3>
+          <h3 className="mb-6 text-lg font-semibold">Timeline</h3>
           <div className="relative pl-8">
             <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-zinc-450" />
             <div className="space-y-10">
@@ -94,7 +94,7 @@ export default function Personal() {
           whileHover={{ scale: 1.02 }}
           className="relative"
         >
-          <h3 className="mb-5 text-lg font-bold ">Projects</h3>
+          <h3 className="mb-6 text-lg font-semibold">Projects</h3>
           <div
             ref={gridRef}
             className="grid grid-cols-1 gap-6 sm:grid-cols-2"

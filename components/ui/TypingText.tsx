@@ -28,7 +28,7 @@ export default function TypingText({ text }: TypingTextProps) {
   }, []);
 
   return (
-    <h3 className="text-lg font-bold mb-6">
+    <h3 className="text-lg font-semibold mb-6">
       {displayed}
       <span className={`inline-block w-2 ${showCursor ? "opacity-100" : "opacity-0"}`}>|</span>
     </h3>
