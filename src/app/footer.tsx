@@ -3,10 +3,10 @@ import { SOCIAL_LINKS } from './data'
 import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
 
 const ICONS = {
-  Github: <FaGithub size={25} />,
-  Twitter: <FaTwitter size={25} />,
-  LinkedIn: <FaLinkedin size={25} />,
-  Instagram: <FaInstagram size={25} />,
+  Github: <FaGithub size={22} />,
+  Twitter: <FaTwitter size={22} />,
+  LinkedIn: <FaLinkedin size={22} />,
+  Instagram: <FaInstagram size={22} />,
 } as const;
 
 export function Footer() {
