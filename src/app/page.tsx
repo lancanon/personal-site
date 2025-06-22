@@ -1,8 +1,9 @@
 'use client'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import TypingText from '../../components/ui/TypingText'
 import FlippableCard from '../../components/ui/FlippableCard'
+import ProjectPreview from '../../components/ui/ProjectPreview'
 import { aboutImages, cardAngles } from '../../components/ui/FlippableCardData'
 import { PROJECTS, TIMELINE } from './data'
 
@@ -27,7 +28,8 @@ const TRANSITION_SECTION = {
 
 export default function Personal() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null)
-  const [localMouse, setLocalMouse] = useState({ x: 0, y: 0 })
+  const [previewPos, setPreviewPos] = useState({ x: 0, y: 0 })
+  const gridRef = useRef<HTMLDivElement>(null)
 
   return (
     <motion.main
@@ -92,7 +94,10 @@ export default function Personal() {
         className="relative"
       >
         <h3 className="mb-5 text-lg font-bold ">Projects</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2"
+        >
           {PROJECTS.map((project) => (
             <a
               key={project.name}
@@ -103,10 +108,11 @@ export default function Personal() {
               onMouseEnter={() => setHoveredProject(project.name)}
               onMouseLeave={() => setHoveredProject(null)}
               onMouseMove={e => {
-                const rect = e.currentTarget.getBoundingClientRect()
-                setLocalMouse({
-                  x: e.clientX - rect.left,
-                  y: e.clientY - rect.top,
+                if (!gridRef.current) return
+                const gridRect = gridRef.current.getBoundingClientRect()
+                setPreviewPos({
+                  x: e.clientX - gridRect.left,
+                  y: e.clientY - gridRect.top,
                 })
               }}
             >
@@ -126,26 +132,15 @@ export default function Personal() {
                   </span>
                 ))}
               </div>
-
-              {hoveredProject === project.name && (
-                <img
-                  src={project.image}
-                  alt="Project preview"
-                  className="absolute z-50 pointer-events-none rounded-xl shadow-lg"
-                  style={{
-                    top: localMouse.y + 16,
-                    left: localMouse.x + 16,
-                    width: 220,
-                    height: 'auto',
-                    transition: 'opacity 0.2s',
-                    maxWidth: '80%',
-                    maxHeight: '60%',
-                  }}
-                />
-              )}
             </a>
           ))}
         </div>
+        {/* Only one preview rendered at the section level */}
+        <ProjectPreview
+          hoveredProject={hoveredProject}
+          previewPos={previewPos}
+          projects={PROJECTS}
+        />
       </motion.section>
     </motion.main>
   )

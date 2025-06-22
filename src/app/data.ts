@@ -1,9 +1,9 @@
-type ProjectTag = {
+export type ProjectTag = {
   label: string
   color: string
 }
 
-type Project = {
+export type Project = {
   name: string
   description: string
   tags: ProjectTag[]
