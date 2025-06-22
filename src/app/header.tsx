@@ -17,7 +17,7 @@ function ThemeSwitch() {
   return (
     <motion.button
       className={`
-        inline-flex h-12 w-12 items-center justify-center rounded-xl
+        inline-flex h-10 w-10 items-center justify-center rounded-xl
         transition-colors duration-200
         focus-visible:outline-2
         bg-orange-200 text-yellow-900
@@ -71,29 +71,29 @@ const navLinks = [
 export function Header() {
   const pathname = usePathname()
   return (
-    <header className="mb-8 flex items-center justify-between">
+    <header className="mb-8 -mt-4 flex items-center justify-between max-w-3xl mx-auto px-4 py-2">
       
       <div className="flex items-center">
         <Link href="/" className="flex items-center">
           <Image
             src="/assets/images/android-chrome-512x512.png"
             alt="Audy Vee Logo"
-            width={40}
-            height={40}
+            width={28}
+            height={28}
             className="rounded-full"
             priority
           />
         </Link>
       </div>
       
-      <nav className="relative flex items-center gap-12">
+      <nav className="relative flex items-center gap-6">
         {navLinks.map(link => {
           const isActive = pathname === link.href
           return (
             <Link
               key={link.href}
               href={link.href}
-              className="relative px-4 py-2 text-lg font-medium"
+              className="relative px-2 py-1 text-lg font-normal"
               style={{ zIndex: 1 }}
             >
               <span className={isActive
@@ -105,7 +105,7 @@ export function Header() {
               {isActive && (
                 <motion.div
                   layoutId="nav-underline"
-                  className="absolute left-0 right-0 -bottom-1 h-1 rounded-full bg-orange-400 dark:bg-purple-600"
+                  className="absolute left-0 right-0 -bottom-1 h-0.5 rounded-full bg-orange-400 dark:bg-purple-600"
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
                 />
               )}
