@@ -80,7 +80,6 @@ export function Header() {
             alt="Audy Vee Logo"
             width={28}
             height={28}
-            className="rounded-full"
             priority
           />
         </Link>
