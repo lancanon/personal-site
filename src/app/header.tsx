@@ -71,7 +71,7 @@ const navLinks = [
 export function Header() {
   const pathname = usePathname()
   return (
-    <header className="relative mb-8 -mt-4 flex items-center justify-between max-w-3xl mx-auto px-4 py-2">
+    <header className="relative mb-8 -mt-8 flex items-center justify-between max-w-3xl mx-auto px-4 py-2">
       
       <div className="flex items-center">
         <Link href="/" className="flex items-center">
