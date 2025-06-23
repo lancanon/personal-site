@@ -97,7 +97,7 @@ export function Header() {
             >
               <span className={isActive
                 ? "text-zinc-900 dark:text-white font-semibold"
-                : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                : "text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
               }>
                 {link.label}
               </span>

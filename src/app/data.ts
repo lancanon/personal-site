@@ -11,11 +11,10 @@ export type Project = {
   image: string
 }
 
-type TimelineItem = {
+export type TimelineItem = {
   company: string
   title: string
   date: string
-  color: string
   link?: string
 }
 
@@ -24,26 +23,31 @@ type SocialLink = {
   link: string
 }
 
+export const BULLET_COLORS = [
+  'bg-yellow-600',
+  'bg-blue-600',
+  'bg-red-600',
+  'bg-green-600',
+  'bg-purple-600',
+];
+
 export const TIMELINE: TimelineItem[] = [
   {
     company: 'Amazon Web Services',
     title: 'AWS Certified Cloud Practitioner',
-    date: '2025 - Present',
-    color: 'bg-yellow-600',
+    date: '2025 - Now',
     link: 'https://www.credly.com/badges/3b3cfd88-bbb4-40ca-8297-fb14c022e817/linked_in_profile',
   },
   {
     company: 'University of North Carolina - Charlotte',
     title: 'B.S. Computer Science',
     date: '2022 - 2024',
-    color: 'bg-blue-600',
     link: 'https://www.charlotte.edu/',
   },
   {
     company: 'Guilford Technical Community College',
     title: 'A.S. Science',
     date: '2017 - 2021',
-    color: 'bg-red-600',
     link: 'https://www.gtcc.edu/',
   },
 ]
