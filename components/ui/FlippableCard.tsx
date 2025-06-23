@@ -27,7 +27,7 @@ function FlippableCard({ src, angle }: { src: string; angle: string }) {
               draggable={false}
             />
           </div>
-          {/* Back (mirrored) */}
+          {/* Back */}
           <div className="absolute inset-0 rounded-2xl overflow-hidden [transform:rotateY(180deg)] backface-hidden">
             <Image
               src={src}

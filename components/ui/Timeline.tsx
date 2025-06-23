@@ -21,8 +21,6 @@ export default function Timeline({ items, variantsSection, transitionSection }: 
         <div className="space-y-10">
           {items.map((item, idx) => {
             const bulletColor = BULLET_COLORS[idx % BULLET_COLORS.length]
-            const borderColor = bulletColor.replace('bg-', 'border-') + '/50'
-
             return (
               <motion.a
                 key={item.company + item.title}
@@ -33,7 +31,6 @@ export default function Timeline({ items, variantsSection, transitionSection }: 
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
-                {/* Bullet */}
                 <span
                   className={`
                     w-2 h-2 rounded-full mt-1.5 mr-4 z-10
