@@ -80,14 +80,14 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'lannymon',
-    description: 'personal social links for lannymon.net (discontinued)',
+    description: 'personal social links for lannymon.net/',
     link:'https://lancanon.github.io/',
     image: '/assets/images/lannymon.png',
     tags: [
       { label: 'HTML', color: 'bg-green-500' },
       { label: 'CSS', color: 'bg-pink-600' },
       { label: 'JavaScript', color: 'bg-yellow-500' },
-      { label: 'FastAPI', color: 'bg-gray-800' },
+      { label: 'Supabase', color: 'bg-purple-400' },
       { label: 'AWS', color: 'bg-orange-600' },
     ],
   },
