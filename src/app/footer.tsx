@@ -27,7 +27,7 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <span className="text-sm">© 2025 Audy Vee. All Rights Reserved.</span>
+        <span className="text-sm">© 2026 Audy Vee. All Rights Reserved.</span>
       </div>
     </footer>
   )
