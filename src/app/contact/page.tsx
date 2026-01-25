@@ -55,7 +55,7 @@ export default function ContactPage() {
             href={contact.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 rounded-xl border border-zinc-700/40 p-5 transition-transform duration-200 hover:scale-105"
+            className="flex items-center gap-4 rounded-xl border border-zinc-600/40 p-5 transition-transform duration-200 hover:scale-105"
           >
             <span className="text-zinc-600 dark:text-zinc-300">{contact.icon}</span>
             <div>
