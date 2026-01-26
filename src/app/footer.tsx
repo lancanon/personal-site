@@ -1,5 +1,5 @@
 'use client'
-import { SOCIAL_LINKS } from './data'
+import { SOCIAL_LINKS } from '@/data/site'
 import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
 
 const ICONS = {

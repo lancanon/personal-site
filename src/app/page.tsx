@@ -1,11 +1,10 @@
 'use client'
-import { motion } from 'framer-motion'
-import TypingText from '../../components/ui/TypingText'
-import FlippableCard from '../../components/ui/FlippableCard'
-import Timeline from '../../components/ui/Timeline'
-import ProjectsSection from '../../components/ui/ProjectsSection'
-import { aboutImages, cardAngles } from '../../components/ui/FlippableCardData'
-import { PROJECTS, TIMELINE } from './data'
+import { motion } from 'motion/react'
+import TypingText from '@/components/ui/TypingText'
+import FlippableCard from '@/components/ui/FlippableCard'
+import TimelineSection from '@/components/ui/TimelineSection'
+import ProjectsSection from '@/components/ui/ProjectsSection'
+import { ABOUT_CARDS, PROJECTS, TIMELINE } from '@/data/site'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -26,6 +25,17 @@ const TRANSITION_SECTION = {
   duration: 0.3,
 }
 
+const VARIANTS_CARD = {
+  hidden: { opacity: 0, y: 24, rotate: -4, scale: 0.94 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotate: 0,
+    scale: 1,
+    transition: { type: 'spring', stiffness: 240, damping: 20 },
+  },
+}
+
 export default function Personal() {
   return (
     <div className="max-w-3xl mx-auto px-4">
@@ -40,14 +50,22 @@ export default function Personal() {
           transition={TRANSITION_SECTION}
         >
           <TypingText text="hey, audy here" />
-          <div className="flex justify-center -space-x-13 mt-13">
-            {aboutImages.map((src, i) => (
-              <FlippableCard key={src} src={src} angle={cardAngles[i]} />
+          <div className="flex justify-center -space-x-6 sm:-space-x-10 mt-10">
+            {ABOUT_CARDS.map(({ src, angle }, index) => (
+              <motion.div
+                key={`${angle}-${index}`}
+                variants={VARIANTS_CARD}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: 0.08 * index }}
+              >
+                <FlippableCard src={src} angle={angle} />
+              </motion.div>
             ))}
           </div>
         </motion.section>
 
-        <Timeline
+        <TimelineSection
           items={TIMELINE}
           variantsSection={VARIANTS_SECTION}
           transitionSection={TRANSITION_SECTION}

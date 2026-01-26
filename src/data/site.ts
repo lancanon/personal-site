@@ -1,3 +1,13 @@
+import type { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import hikeImg from '@/assets/images/hike.JPG'
+import laosImg from '@/assets/images/laos.JPG'
+import mapleImg from '@/assets/images/maple.png'
+import nisekoImg from '@/assets/images/niseko.jpg'
+import rollcallImg from '@/assets/images/projects/rollcall.png'
+import joynestImg from '@/assets/images/projects/joynest.png'
+import lannymonImg from '@/assets/images/projects/lannymon.png'
+import furusatoImg from '@/assets/images/projects/furusato.png'
+
 export type ProjectTag = {
   label: string
   color: string
@@ -8,7 +18,7 @@ export type Project = {
   description: string
   tags: ProjectTag[]
   link: string
-  image: string
+  image: StaticImport
 }
 
 export type TimelineItem = {
@@ -19,9 +29,23 @@ export type TimelineItem = {
 }
 
 type SocialLink = {
-  label: string
+  label: 'Github' | 'Twitter' | 'LinkedIn' | 'Instagram'
   link: string
 }
+
+type AboutCard = {
+  src: StaticImport
+  angle: string
+}
+
+export const WEBSITE_URL = 'https://nim-fawn.vercel.app'
+
+export const ABOUT_CARDS: AboutCard[] = [
+  { src: laosImg, angle: '-8deg' },
+  { src: hikeImg, angle: '-2deg' },
+  { src: mapleImg, angle: '2deg' },
+  { src: nisekoImg, angle: '8deg' },
+]
 
 export const BULLET_COLORS = [
   'bg-yellow-600',
@@ -29,7 +53,7 @@ export const BULLET_COLORS = [
   'bg-red-600',
   'bg-green-600',
   'bg-purple-600',
-];
+]
 
 export const TIMELINE: TimelineItem[] = [
   {
@@ -55,9 +79,10 @@ export const TIMELINE: TimelineItem[] = [
 export const PROJECTS: Project[] = [
   {
     name: 'Rollcall',
-    description: 'task-management mobile application that inspires productivity through focused features like streaks, motivation, and simple task tracking.',
+    description:
+      'task-management mobile application that inspires productivity through focused features like streaks, motivation, and simple task tracking.',
     link: 'https://github.com/nathanwince/Task-Manager',
-    image: '/assets/images/rollcall.png',
+    image: rollcallImg,
     tags: [
       { label: 'Figma', color: 'bg-blue-500' },
       { label: 'Flutter', color: 'bg-sky-400' },
@@ -68,9 +93,10 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Joynest',
-    description: 'e-commerce platform where users can buy, offer, and sell a wide variety of home decor and furniture',
-    link:'https://github.com/lancanon/joynest-2025',
-    image: '/assets/images/joynest.png',
+    description:
+      'e-commerce platform where users can buy, offer, and sell a wide variety of home decor and furniture',
+    link: 'https://github.com/lancanon/joynest-2025',
+    image: joynestImg,
     tags: [
       { label: 'Typescript', color: 'bg-sky-600' },
       { label: 'React', color: 'bg-cyan-500' },
@@ -81,8 +107,8 @@ export const PROJECTS: Project[] = [
   {
     name: 'lannymon',
     description: 'personal social links for lannymon.net/',
-    link:'https://lancanon.github.io/',
-    image: '/assets/images/lannymon.png',
+    link: 'https://lancanon.github.io/',
+    image: lannymonImg,
     tags: [
       { label: 'HTML', color: 'bg-green-500' },
       { label: 'CSS', color: 'bg-pink-600' },
@@ -93,32 +119,19 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Furusato',
-    description: '2D platformer where the player guides a lost girl through a mysterious world to find her way back home.',
-    link:'https://github.com/lancanon/furusato-gamemaker',
-    image: '/assets/images/furusato.png',
-    tags: [
-      { label: 'GameMaker', color: 'bg-lime-500' },
-    ],
+    description:
+      '2D platformer where the player guides a lost girl through a mysterious world to find her way back home.',
+    link: 'https://github.com/lancanon/furusato-gamemaker',
+    image: furusatoImg,
+    tags: [{ label: 'GameMaker', color: 'bg-lime-500' }],
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  {
-    label: 'Github',
-    link: 'https://github.com/lancanon',
-  },
-  {
-    label: 'Twitter',
-    link: 'https://x.com/lannymon_',
-  },
-  {
-    label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/audy-vee-384479217/',
-  },
-  {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/lannymon_',
-  },
+  { label: 'Github', link: 'https://github.com/lancanon' },
+  { label: 'Twitter', link: 'https://x.com/lannymon_' },
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/audy-vee-384479217/' },
+  { label: 'Instagram', link: 'https://www.instagram.com/lannymon_' },
 ]
 
 export const EMAIL = 'veeaudy1204@gmail.com'

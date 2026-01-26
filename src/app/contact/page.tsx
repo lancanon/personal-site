@@ -1,6 +1,6 @@
 'use client'
-import { motion } from 'framer-motion'
-import { EMAIL, SOCIAL_LINKS } from '../data'
+import { motion } from 'motion/react'
+import { EMAIL, SOCIAL_LINKS } from '@/data/site'
 import { FaEnvelope, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 const ICONS = {
@@ -44,7 +44,7 @@ export default function ContactPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h3 className="text-lg font-bold mb-6">Let's Connect</h3>
+      <h3 className="text-lg font-bold mb-6">Let&apos;s Connect</h3>
       <p className="mb-8 text-zinc-700 dark:text-zinc-400">
         Connect with me through any of these platforms.
       </p>
