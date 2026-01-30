@@ -33,9 +33,10 @@ export default function ProjectPreview({ hoveredProject, previewPos, projects }:
         src={project.image}
         alt={`${project.name} preview`}
         fill
-        sizes="240px"
+        sizes="(min-width: 640px) 280px, 240px"
+        quality={95}
         className="h-full w-full rounded-xl border border-zinc-900/10 bg-zinc-50 object-cover dark:border-zinc-100/10 dark:bg-zinc-900"
-        loading="lazy"
+        priority={false}
       />
     </div>
   )
