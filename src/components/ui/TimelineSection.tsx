@@ -27,13 +27,16 @@ export default function TimelineSection({ items, variantsSection, transitionSect
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start no-underline"
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                className="group relative flex items-start no-underline"
               >
+                {idx < items.length - 1 ? (
+                  <span
+                    className="absolute left-1 top-3 h-[calc(100%+2.5rem)] w-px bg-zinc-200 dark:bg-zinc-700"
+                    aria-hidden="true"
+                  />
+                ) : null}
                 <span
-                  className={`${bulletColor} z-10 mr-4 mt-1.5 h-2 w-2 rounded-full`}
-                  style={{ boxShadow: '0 0 0 4px rgba(0,0,0,0.08)' }}
+                  className={`${bulletColor} z-10 mr-4 mt-1.5 h-2 w-2 rounded-full ring-4 ring-zinc-900/10 dark:ring-zinc-100/10`}
                 />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
