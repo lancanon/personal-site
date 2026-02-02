@@ -50,7 +50,7 @@ export default function Personal() {
           transition={TRANSITION_SECTION}
         >
           <TypingText text="hey, audy here" />
-          <div className="flex justify-center -space-x-6 sm:-space-x-10 mt-10">
+          <div className="flex justify-start sm:justify-center -space-x-6 sm:-space-x-10 mt-10">
             {ABOUT_CARDS.map(({ src, angle }, index) => (
               <motion.div
                 key={`${angle}-${index}`}
