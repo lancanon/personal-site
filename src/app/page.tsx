@@ -54,6 +54,7 @@ export default function Personal() {
             {ABOUT_CARDS.map(({ src, angle }, index) => (
               <motion.div
                 key={`${angle}-${index}`}
+                className={index > 1 ? 'hidden sm:block' : ''}
                 variants={VARIANTS_CARD}
                 initial="hidden"
                 animate="visible"

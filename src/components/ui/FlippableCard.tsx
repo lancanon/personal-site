@@ -9,7 +9,7 @@ type FlippableCardProps = {
 
 function FlippableCard({ src, angle }: FlippableCardProps) {
   return (
-    <div className="relative h-56 w-56 sm:h-64 sm:w-50" style={{ transform: `rotate(${angle})` }}>
+    <div className="relative h-44 w-44 sm:h-60 sm:w-56" style={{ transform: `rotate(${angle})` }}>
       <div className="group h-full w-full [perspective:1200px]">
         <div className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           <div className="absolute inset-0 overflow-hidden rounded-2xl [backface-visibility:hidden]">
