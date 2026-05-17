@@ -57,6 +57,11 @@ export const BULLET_COLORS = [
 
 export const TIMELINE: TimelineItem[] = [
   {
+    company: 'Cognizant',
+    title: 'Software Engineer',
+    date: '2026 - Now',
+  },
+  {
     company: 'Amazon Web Services',
     title: 'AWS Certified Cloud Practitioner',
     date: '2025 - Now',
