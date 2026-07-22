@@ -1,12 +1,13 @@
 'use client'
 import { SOCIAL_LINKS } from '@/data/site'
-import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { FaGithub, FaTwitter, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa'
 
 const ICONS = {
   Github: <FaGithub size={22} />,
   Twitter: <FaTwitter size={22} />,
   LinkedIn: <FaLinkedin size={22} />,
   Instagram: <FaInstagram size={22} />,
+  Email: <FaEnvelope size={22} />,
 } as const;
 
 export function Footer() {

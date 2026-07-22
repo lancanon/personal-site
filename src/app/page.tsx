@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 import { motion } from 'motion/react'
 import TypingText from '@/components/ui/TypingText'
 import FlippableCard from '@/components/ui/FlippableCard'
@@ -37,10 +38,12 @@ const VARIANTS_CARD = {
 }
 
 export default function Personal() {
+  const [hoveredSection, setHoveredSection] = useState<'timeline' | 'projects' | null>(null)
+
   return (
     <div className="max-w-3xl mx-auto px-4">
       <motion.main
-        className="space-y-24"
+        className="space-y-12"
         variants={VARIANTS_CONTAINER}
         initial="hidden"
         animate="visible"
@@ -50,11 +53,11 @@ export default function Personal() {
           transition={TRANSITION_SECTION}
         >
           <TypingText text="hey, audy here" />
-          <div className="flex justify-start sm:justify-center -space-x-6 sm:-space-x-10 mt-10">
-            {ABOUT_CARDS.map(({ src, angle }, index) => (
+          <div className="relative mt-10 h-64 overflow-visible sm:h-72">
+            {ABOUT_CARDS.map(({ src, angle, style }, index) => (
               <motion.div
                 key={`${angle}-${index}`}
-                className={index > 1 ? 'hidden sm:block' : ''}
+                className={`absolute ${style}`}
                 variants={VARIANTS_CARD}
                 initial="hidden"
                 animate="visible"
@@ -66,17 +69,31 @@ export default function Personal() {
           </div>
         </motion.section>
 
-        <TimelineSection
-          items={TIMELINE}
-          variantsSection={VARIANTS_SECTION}
-          transitionSection={TRANSITION_SECTION}
-        />
+        <motion.div
+          onMouseEnter={() => setHoveredSection('timeline')}
+          onMouseLeave={() => setHoveredSection(null)}
+          animate={{ opacity: hoveredSection === 'projects' ? 0.4 : 1 }}
+          transition={{ duration: 0.2 }}
+        >
+          <TimelineSection
+            items={TIMELINE}
+            variantsSection={VARIANTS_SECTION}
+            transitionSection={TRANSITION_SECTION}
+          />
+        </motion.div>
 
-        <ProjectsSection
-          projects={PROJECTS}
-          variantsSection={VARIANTS_SECTION}
-          transitionSection={TRANSITION_SECTION}
-        />
+        <motion.div
+          onMouseEnter={() => setHoveredSection('projects')}
+          onMouseLeave={() => setHoveredSection(null)}
+          animate={{ opacity: hoveredSection === 'timeline' ? 0.4 : 1 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ProjectsSection
+            projects={PROJECTS}
+            variantsSection={VARIANTS_SECTION}
+            transitionSection={TRANSITION_SECTION}
+          />
+        </motion.div>
       </motion.main>
     </div>
   )
