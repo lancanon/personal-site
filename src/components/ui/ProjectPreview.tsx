@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { useMemo } from 'react'
 import type { Project } from '@/data/site'
 
 type PreviewPos = {
@@ -14,11 +13,6 @@ type ProjectPreviewProps = {
 }
 
 export default function ProjectPreview({ hoveredProject, previewPos, projects }: ProjectPreviewProps) {
-  const projectLookup = useMemo(() => new Map(projects.map((project) => [project.name, project])), [projects])
-  const project = hoveredProject ? projectLookup.get(hoveredProject) : null
-
-  if (!project) return null
-
   return (
     <div
       className="pointer-events-none absolute z-50 rounded-xl shadow-lg"
@@ -27,17 +21,27 @@ export default function ProjectPreview({ hoveredProject, previewPos, projects }:
         left: previewPos.x + 16,
         width: 240,
         height: 160,
+        opacity: hoveredProject ? 1 : 0,
+        transition: 'opacity 0.15s ease',
       }}
     >
-      <Image
-        src={project.image}
-        alt={`${project.name} preview`}
-        fill
-        sizes="(min-width: 640px) 280px, 240px"
-        quality={95}
-        className="h-full w-full rounded-xl border border-zinc-900/10 bg-zinc-50 object-cover dark:border-zinc-100/10 dark:bg-zinc-900"
-        priority={false}
-      />
+      {projects.map((project) => (
+        <Image
+          key={project.name}
+          src={project.image}
+          alt={`${project.name} preview`}
+          fill
+          sizes="(min-width: 640px) 280px, 240px"
+          quality={95}
+          loading="eager"
+          className="rounded-xl border border-zinc-900/10 bg-zinc-50 object-cover dark:border-zinc-100/10 dark:bg-zinc-900"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            opacity: hoveredProject === project.name ? 1 : 0,
+          }}
+        />
+      ))}
     </div>
   )
 }
